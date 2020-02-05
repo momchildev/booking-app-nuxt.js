@@ -1,0 +1,187 @@
+<template>
+  <section v-if="flow=='confirmation'">
+
+    <!--
+    {{appointment}}
+    -->
+    <h3>Confirm your appointment</h3>
+
+
+    <section>
+      <label>Date</label>
+      <span v-for="(a, i) in Appointments" :key="i">{{a.appointment.Date|formatDate}}</span>
+    </section>
+    <section>
+      <label>Time</label>
+      <span>{{time}}</span>
+    </section>
+    <section>
+      <label>Location</label>
+      <span>{{location}}</span>
+    </section>
+    <section>
+      <label>Service</label>
+      <span>{{service}}</span>
+    </section>
+    <section>
+      <label>Add-on</label>
+      <span>{{addon}}</span>
+    </section>
+    <section>
+      <label>Esthetician</label>
+      <span>{{esthetician}}</span>
+    </section>
+
+    <section class="break promotion">
+      <label>Promotion Code</label>
+      <div>
+        <input type="text" v-model="Booking.promotion_code" /><button type="button">Apply</button>
+      </div>
+    </section>
+
+    <section class="break">
+      <label>Notes</label>
+      <p>If there is anything you would like for us to know prior to your appointment, let us know here.</p>
+      <textarea v-model="appointment.notes"></textarea>
+    </section>
+
+    <section class="break">
+      <label>Payment</label>
+      <p>
+        Enter your credit card to hold this reservation.  You will not be charged until you come in for your appointment.  We only charge your credit card in advance if you cancel within 24 hours of your appointment or are a no-show.
+      </p>
+
+      <section>
+        <section class="form-row">
+          <section class="percent-50">
+            <label>Card Number </label>
+            <input type="text" data-vv-name="number" v-model="Booking.card.number" v-validate="'required'" />
+            <small v-show="errors.has('number')" class="error">{{ errors.first('number') }}</small>
+          </section>
+          <section class="group percent-50">
+            <section>
+              <label>Expiration</label>
+              <section class="group">
+                <section>
+                  <input type="text" data-vv-name="expiration"  v-model="Booking.card.expiry.month"  v-validate="'required'" placeholder="MM" size="2" />
+                </section>
+                <section>
+                  <input type="text" data-vv-name="expiration"  v-model="Booking.card.expiry.year" v-validate="'required'" placeholder="YY" size="2" />
+                </section>
+              </section>
+
+               <small v-show="errors.has('expiration')" class="error">{{ errors.first('expiration') }}</small>
+            </section>
+            <section>
+              <label>CVV</label>
+              <input type="text" data-vv-name="cvv" v-model="Booking.card.cvv" v-validate="'required'" />
+              <small v-show="errors.has('expiration')" class="error">{{ errors.first('cvv') }}</small>
+            </section>
+          </section>
+        </section>
+        <section class="form-row">
+          <section class="group percent-50">
+            <section>
+              <label>First Name</label>
+              <input type="text" data-vv-name="first_name"  v-model="Booking.first_name" v-validate="'required'" />
+              <small v-show="errors.has('first_name')" class="error">{{ errors.first('first_name') }}</small>
+            </section>
+            <section>
+              <label>Last Name</label>
+              <input type="text" data-vv-name="last_name"  v-model="Booking.last_name" v-validate="'required'" />
+              <small v-show="errors.has('last_name')" class="error">{{ errors.first('last_name') }}</small>
+            </section>
+          </section>
+          <section class="percent-50">
+            <label>Billing Address</label>
+            <input type="text" data-vv-name="address"  v-model="Booking.billing.address" v-validate="'required'" />
+            <small v-show="errors.has('address')" class="error">{{ errors.first('address') }}</small>
+          </section>
+        </section>
+        <section class="form-row">
+          <section class="group percent-50">
+            <section>
+              <label>City</label>
+              <input type="text" data-vv-name="city"  v-model="Booking.billing.city"  v-validate="'required'"/>
+              <small v-show="errors.has('city')" class="error">{{ errors.first('city') }}</small>
+            </section>
+            <section>
+              <label>State</label>
+              <input type="text" data-vv-name="state"  v-model="Booking.billing.state" v-validate="'required'" />
+              <small v-show="errors.has('state')" class="error">{{ errors.first('state') }}</small>
+            </section>
+          </section>
+          <section class="percent-50">
+            <label>Zip Code</label>
+            <input type="text" data-vv-name="zip_code"  v-model="Booking.billing.zip_code" v-validate="'required'" />
+            <small v-show="errors.has('zip_code')" class="error">{{ errors.first('zip_code') }}</small>
+          </section>
+        </section>
+      </section>
+      <p>&nbsp;</p>
+      <p>
+        By booking this appointment, you confirm that you have read and understand our cancellation and lateness policy. <a href="https://www.silvermirror.com/about-us/faq-facial-bar/" target="_blank">Cancelation Policy</a>.
+      </p>
+
+      <section class="buttons">
+        <button type="button" class="btn btn-primary btn-continue" @click="book()">Book Now</button>
+      </section>
+
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+
+    </section>
+  </section>
+
+  <section v-if="flow=='confirmed'">
+    <h2>Your appointment is confirmed</h2>
+    <h3>Thank you for booking with Silver Mirror. See you at your next facial</h3>
+    <section>
+      <label>Date</label>
+      <span>{{date|formatDate}}</span>
+    </section>
+    <section>
+      <label>Time</label>
+      <span>{{time}}</span>
+    </section>
+    <section>
+      <label>Location</label>
+      <span>{{location}}</span>
+    </section>
+    <section>
+      <label>Service</label>
+      <span>{{service}}</span>
+    </section>
+    <section>
+      <label>Add-on</label>
+      <span>{{addon}}</span>
+    </section>
+    <section>
+      <label>Esthetician</label>
+      <span>{{esthetician}}</span>
+    </section>
+
+    <section class="break">
+      <p @click="flow=false">
+        <a>BOOK ANOTHER APPOINTMENT</a>
+      </p>
+
+      <p>
+        <a>VIEW MY APPOINTMENTS</a>
+      </p>
+    </section>
+
+    
+  </section>
+</template>
+
+
+
+<script>
+
+
+export default {
+
+}
+
+</script>

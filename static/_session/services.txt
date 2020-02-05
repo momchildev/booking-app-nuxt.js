@@ -1,0 +1,68 @@
+<template>
+  <section  id="select-service">
+    <h3>Select a service length that fits your schedule:</h3>
+
+    <section class="flex">
+      <section>
+        <img src="/images/30min.jpg" width="100%" style="padding: 20px;" @click="duration=30"/>
+      </section>
+      <section>
+        <img src="/images/50min.jpg" width="100%" style="padding: 20px;" @click="duration=50"/>
+      </section>
+    </section>
+
+    <h2 v-if="number_of_guests > 1" style="margin-top: 40px;">Now Booking Appointment # {{(appointments.length+1)}}</h2>
+
+    <section v-if="duration" id="booking">
+      <section>
+        <h3>Select a {{duration}} minute maintenance facial</h3>
+        <BookingServices v-model="service_id" :duration="duration" :value="service_id" />
+      </section>
+      <section>
+        <h3>Select an add-on (if desired)</h3>
+        <BookingAddons v-model="addon_ids" :value="addon_ids" :service_id="service_id" />
+      </section>
+    </section>
+
+
+    <section class="buttons">
+      <nuxt-link class="btn btn-primary btn-continue right" :to="`${$route.params.session}/time`" v-if="service_id">Continue</nuxt-link>
+
+      <a class="btn btn-primary btn-back" @click="$router.go(-1)">&lt;&lt; Back</a>
+    </section>
+  </section>
+</template>
+
+
+
+<script>
+import { mapGetters } from 'vuex'
+import BookingAddons from '~/components/booking/Addons.vue'
+import BookingServices from '~/components/booking/Services.vue'
+
+export default {
+  components: {
+    BookingAddons,
+    BookingServices
+  },
+  computed: {
+    ...mapGetters({
+      number_of_guests: 'appointment/number_of_guests'
+      appointments: 'appointments/list'
+    })
+  },
+  data() {
+    return {
+      duration: false,
+      service_id: '',
+      addon_ids: []
+    }
+  },
+  methods: {
+    continue() {
+      this.$store.commit("appointment/")
+    }
+  }
+}
+
+</script>

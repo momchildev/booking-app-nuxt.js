@@ -1,0 +1,406 @@
+@import "_mixins";
+
+@include font-face(Freigt, /booking/fonts/FreigTexProBook, null, null, otf);
+@include font-face(Averta, /booking/fonts/averta/Averta-Regular, null, null, otf);
+@include font-face(AvertaBold, /booking/fonts/averta/Averta-Bold, null, null, otf);
+
+#wpadminbar { display:none !important;}
+
+article[data-layout=booking] {
+	width: 100%;
+	max-width: 980px;
+	margin:auto;
+	margin-top: 100px;
+	margin-bottom: 200px;
+	/*
+	background: #f4f8f9;
+	*/
+
+	@media (max-width: 768px) {
+		padding: 0px 30px;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+
+
+	> nav {
+		background: #bcd3e0;
+		margin-bottom: 30px;
+		> span {
+			display: inline-block;
+			border-left: solid 2px #fff;
+			color: #fff;
+			padding: 20px;
+			&:nth-of-type(1) {
+				border-left: none;
+			}
+
+			&:hover {
+				color: #333;
+			}
+		}
+	}
+
+	h2 {
+		font-family: "Freigt";
+		font-weight: 100;
+		font-size: 2.6em;
+		line-height: 1.2;
+		color: #565656;
+
+		margin-bottom: 30px;
+
+		@media (max-width: 778px) {
+	    	font-size: 30px;
+	    }
+	}
+
+
+	h3 {
+		font-family: "AvertaBold";
+		font-weight: 500;
+		font-size: 1.6em;
+		color: #434343;
+
+		&.bar {
+		 	padding-bottom: 10px;
+		    margin-bottom: 20px;
+		    margin-top: 40px;
+			border-bottom: solid #b3b3b2 2px;	
+		}
+	}
+}
+
+
+*.two-column-layout {
+	display: flex;
+	flex-wrap: wrap;
+	> * {
+		width: 50%;
+
+		&:nth-of-type(1) {
+			padding-right: 20px;
+		}
+		&:nth-of-type(2) {
+			padding-left: 20px;
+		}
+		@media (max-width: 778px) {
+			width: 100%;
+			padding: 0;
+		}
+	}
+}
+
+section.service-images {
+	display: flex;
+	margin-top: 40px;
+	> section {
+		&:nth-of-type(1) {
+			padding-right: 10px;
+		}
+		&:nth-of-type(2) {
+			padding-left: 10px;
+		}
+
+		@media (max-width: 640px) {
+			padding: 0 !important
+		}
+	}
+	@media (max-width: 640px) {
+		flex-wrap: wrap;
+		> section {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+
+section.flex {
+	display: flex;
+
+
+	@media (max-width: 640px) {
+		flex-wrap: wrap;
+
+	}
+
+	margin-top: 10px;
+
+	> label {
+  		width:30%;
+  		
+  	}
+  	> select, SELECT {
+  		width: 69%;
+  		@media (max-width: 778px) {
+  			width: 67%;
+  		}
+  	}
+
+  	> section {
+  		width: 50%;
+  		@media (max-width: 778px) {
+  			padding: 0;
+
+  			> img {
+  				padding: 0 !important;
+  				padding-bottom: 20px !important;
+  			}
+  		}
+  	}
+
+  	> div {
+  		display: flex;
+  		width: 100%;
+  	}
+
+  	> span {
+  		padding:10px;
+  		color: #666;
+
+  	}
+
+  	> * {
+	  	@media (max-width: 778px) {
+			width: 100% !important;
+		}
+  	}
+}
+
+label {
+	font-size: 12px;
+	margin-top: 10px;
+
+
+	font-family: 'Averta', 'Lato', sans-serif;
+	color: #636363;
+	font-size: 18px;
+
+	white-space: nowrap;
+
+	min-width: 300px;
+
+
+	@media (max-width: 778px) {
+		margin-bottom: 0px;
+		margin-top: 20px;
+	}
+
+}
+
+button, label {
+	font-family: 'Averta', sans-serif;
+}
+
+
+form {
+	padding: 0;
+	INPUT[type=text], SELECT, TEXTAREA {
+		width: 100%;
+
+		border: 2px solid #b3b3b2;
+    font-family: 'Averta', sans-serif;
+    color: #636363;
+
+    font-size: 20px;
+
+    
+
+    border-radius: none;
+
+    appearance: none;
+    -moz-appearance: none;
+		-webkit-appearance: none;
+
+		padding: 8px 15px;
+
+		@media (max-width: 778px) {
+			font-size: 16px;
+		}
+	}
+
+	SELECT {
+		background: url('/booking/images/dropdown-arrow.png') no-repeat;
+		background-position: 97% 13px;
+		-webkit-appearance: none;
+	}
+
+	section.buttons {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		a {
+			&:link, &:visited, &:active {
+				color: #fff !important;
+			}
+			&.right {
+				float: right;
+			}
+
+			@media (max-width: 778px) {
+				float: none !important;
+				display: block; 
+
+				font-size: 12px;
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+
+section {
+	&.break {
+		border-top: solid #c3c3c3 2px;
+		margin-top: 20px;
+		padding-bottom: 0px;
+		padding-top: 10px;
+
+		&.promotion {
+			display: flex;
+			padding-top: 20px;
+
+			@media (max-width: 778px) {
+				flex-wrap: wrap;
+			}
+
+			> div {
+				display: flex;
+				width: 100%;
+				> * {
+					margin: 0 !important;
+				}
+			}
+
+			button {
+				color: #fff;
+			    background-color: #4faaf1;
+			    border-color: #4faaf1;
+			    border-radius: 2px;
+			    text-transform: uppercase;
+			    font-weight: 600;
+			    padding: 10px 40px;
+			    margin-bottom: 0 !important;
+			}
+		}
+	}
+
+	&.appointments {
+		display: flex;
+
+		margin-bottom: 50px;
+		line-height: 2;
+
+		font-size: 13px;
+		> section {
+			width: 33%;
+			white-space: nowrap;
+			label {
+				display: inline-block;
+				min-width: 150px;
+				margin-top: 0;
+			}
+		}
+		@media (max-width: 778px) {
+			flex-wrap: wrap;
+			> section {
+				width: 100%;
+			}
+		}
+
+	}
+
+	&.appointment {
+		margin-top: 50px;
+		line-height: 2;
+		font-size: 13px;
+		> section {
+			> label {
+				display: inline-block;
+				min-width: 150px;
+				margin-top: 0;
+			}
+		}
+	}
+}
+
+
+.confirmation {
+	label {
+		text-transform: uppercase;
+		font-weight: bold;
+		color: #434343;
+	}
+}
+
+
+
+.btn-continue {
+	color: #fff !important;
+    background-color: #4faaf1;
+    border-color: #4faaf1;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 40px;
+}
+
+.btn-back {
+	color: #fff !important;
+    background-color: #666;
+    border-color: #666;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 40px;
+}
+
+section {
+	&.form-row {
+		display: flex;
+		flex-wrap: none;
+		justify-content: space-between;
+
+		margin-bottom: 10px;
+
+		INPUT[type=text] {
+			width: 100%;
+		}
+
+		.group  {
+			display: flex;
+			flex-wrap: none;
+			> * {
+				padding-right: 20px;
+			    width: 57%;
+				&:last-of-type {
+					width: 43%;
+					padding-right: 0;
+				}
+			}
+		}
+		> section {
+			width: 100%;
+		
+		}
+	}
+}
+
+
+
+.percent-50 {
+	width: 50% !important;
+	padding-right: 20px;	
+
+	@media (max-width: 778px) {
+		width: 100% !important;
+	}
+}
+
+.error {
+	color: #cc0000;
+}
+
+@import "calendar.scss";
+@import "modal.scss";
+// @import "booking-appointments.scss";

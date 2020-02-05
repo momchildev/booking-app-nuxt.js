@@ -1,0 +1,370 @@
+
+
+
+/* Averta font */
+
+/*@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=c9f4fbd7-ee5f-452e-b866-d53506f8dd54");
+*/
+
+@font-face{
+font-family:"Averta W01 Light";
+src:url("../fonts/7c6c21a6-9153-4526-b91b-4594b8911381.eot?#iefix");
+src:url("../fonts/7c6c21a6-9153-4526-b91b-4594b8911381.eot?#iefix") format("eot"),url("fonts/dc836390-131e-464f-91e6-f9f9cf751a35.woff2") format("woff2"),url("fonts/dffa0023-f2da-40e3-9919-c09dcd31d1f3.woff") format("woff"),url("fonts/b2d3766f-1065-4360-bbe0-11bc8a43a958.ttf") format("truetype"),url("fonts/736ffbf5-8a40-49c3-b5ea-0ec63fbdf229.svg#736ffbf5-8a40-49c3-b5ea-0ec63fbdf229") format("svg");
+}
+@font-face{
+font-family:"Averta W01 Regular";
+src:url("../fonts/025b33d7-74f5-4aa8-94a0-b882e0b23521.eot?#iefix");
+src:url("../fonts/025b33d7-74f5-4aa8-94a0-b882e0b23521.eot?#iefix") format("eot"),url("fonts/166ce875-a649-4826-a5a0-a24f2dd89cd5.woff2") format("woff2"),url("fonts/fc417db9-6d91-4c85-81b1-2ff3d583d149.woff") format("woff"),url("fonts/04ba64d0-f98c-415f-a1a9-c785f3e94181.ttf") format("truetype"),url("fonts/c2799039-228f-4459-b007-e6b4fdcd65e7.svg#c2799039-228f-4459-b007-e6b4fdcd65e7") format("svg");
+}
+@font-face{
+font-family:"Averta W01 Bold";
+src:url("../fonts/4b210cf6-f4ac-438c-9671-a4472e2ff647.eot?#iefix");
+src:url("../fonts/4b210cf6-f4ac-438c-9671-a4472e2ff647.eot?#iefix") format("eot"),url("fonts/91271893-3829-4dc9-a79b-a47b7146022c.woff2") format("woff2"),url("fonts/17dd7da6-7e09-45f6-bae4-9a944baed5a6.woff") format("woff"),url("fonts/c50d808d-b715-4658-bfa2-d17977b03801.ttf") format("truetype"),url("fonts/1af6ffc3-62f7-46ec-a0a4-27dddb17be03.svg#1af6ffc3-62f7-46ec-a0a4-27dddb17be03") format("svg");
+}
+
+/* Justus font */
+
+@font-face {
+  font-family: 'Justus-Roman';
+  src: url('../fonts/justus-roman.eot');
+  src: url('../fonts/justus-roman.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/justus-roman.woff') format('woff'),
+       url('../fonts/justus-roman.ttf') format('truetype'),
+       url('../fonts/justus-roman.svg#Justus-Roman') format('svg');
+}
+
+@font-face {
+  font-family: 'Justus-Bold';
+  src: url('../fonts/justus-bold.eot');
+  src: url('../fonts/justus-bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/justus-bold.woff') format('woff'),
+       url('../fonts/justus-bold.ttf') format('truetype'),
+       url('../fonts/justus-bold.svg#Justus-Bold') format('svg');
+}
+
+@font-face {
+  font-family: 'Justus-Versalitas';
+  src: url('../fonts/justus-versalitas.eot');
+  src: url('../fonts/justus-versalitas.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/justus-versalitas.woff') format('woff'),
+       url('../fonts/justus-versalitas.ttf') format('truetype'),
+       url('../fonts/justus-versalitas.svg#Justus-Versalitas') format('svg');
+}
+
+@font-face {
+  font-family: 'Justus-Italic';
+  src: url('../fonts/justus-italic.eot');
+  src: url('../fonts/justus-italic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/justus-italic.woff') format('woff'),
+       url('../fonts/justus-italic.ttf') format('truetype'),
+       url('../fonts/justus-italic.svg#Justus-Italic') format('svg');
+}
+
+@font-face {
+  font-family: 'Justus-Oldstyle';
+  src: url('../fonts/justus-oldstyle.eot');
+  src: url('../fonts/justus-oldstyle.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/justus-oldstyle.woff') format('woff'),
+       url('../fonts/justus-oldstyle.ttf') format('truetype'),
+       url('../fonts/justus-oldstyle.svg#Justus-Oldstyle') format('svg');
+}
+
+@font-face {
+  font-family: 'Justus-ItalicOldstyle';
+  src: url('../fonts/justus-italicoldstyle.eot');
+  src: url('../fonts/justus-italicoldstyle.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/justus-italicoldstyle.woff') format('woff'),
+       url('../fonts/justus-italicoldstyle.ttf') format('truetype'),
+       url('../fonts/justus-italicoldstyle.svg#Justus-ItalicOldstyle') format('svg');
+}
+
+
+
+
+
+
+
+body {
+	font-family:"Averta W01 Regular";
+}
+
+
+.selection-box-time-holder {
+	width: 20%; 
+	text-align: center; 
+	float: left;
+	padding: 5px;
+}
+
+.selection-box-time, .selection-box-time-period {
+	width: 100%; 
+	text-align: center; 
+	float: left;   
+	padding: 5px; 
+	cursor: pointer;
+	color: black;
+	border: solid 1px #D7D7D7;
+    background-color: #ECECEC;	
+    min-height: 60px;
+}
+
+.show-selected {
+	background-color: #C7E5F9;
+	color: black;
+}
+
+/* calendar */
+
+.fc-widget-header {
+	padding-top: 15px;
+}
+
+.fc-toolbar {
+    text-align: center;
+    margin-bottom: 0;
+    background-color: #ECE8E8;
+}
+
+.fc h2 {
+   font-size: 16px;
+	padding: 10px 0 6px 0;
+    text-transform: capitalize;   
+}
+
+.fc-toolbar .fc-right {
+    float: right;
+    padding: 5px;
+}
+
+.fc-view, .fc-view > table {
+    background-color: white;
+}
+
+.fc th, .fc td {
+    border: none;
+    vertical-align: middle;
+}
+
+.fc td {
+	cursor: pointer;	
+}
+
+.fc td:hover {
+	/*background-color: #ECE8E8;*/	
+}
+
+.fc-ltr .fc-basic-view .fc-day-number {
+    text-align: center;
+}
+.fc-basic-view td.fc-week-number span, .fc-basic-view td.fc-day-number {
+    padding-top: 15px;
+    padding-bottom: 2px;
+}
+
+.fc td.fc-today {
+    border-style: none;
+}
+
+.fc-toolbar .fc-left {
+    padding: 5px;
+}
+
+.fc-button {
+	text-shadow: none;
+	box-shadow: none; 
+	background-image: none;
+	background-color: transparent;
+	border: none;
+}
+
+.fc-basic-view td.fc-week-number span, .fc-basic-view td.fc-day-number {
+    padding-top: 5px;
+}
+
+.fc-bg table {
+    height: 30px;
+}
+
+.fc-basic-view .fc-body .fc-row {
+    min-height: 30px;
+    height: 30px !important;
+}
+
+.fc-past {
+	color: #D2C5DF;
+}
+
+.fc-day-number.fc-other-month {
+    opacity: 0.5;
+}
+
+
+/* order pages */
+
+.order-line {
+	margin: 10px 0;
+	text-align: left;
+	clear: both;
+	width: 50%;
+    max-width: 350px;
+}
+
+.order-line-conf {
+	margin: 2px 0;
+	text-align: left;
+	clear: both;
+	width: 100%;
+    /*max-width: 350px;*/
+}
+
+.order-field-name {
+	font-weight: bold;
+	text-align: left;
+	width: 40%;
+	min-height: auto;
+}
+
+.order-field-value {
+	text-align: left;
+	width: 40%;
+	min-height: auto;
+}
+
+.order-field-price {
+	text-align: right;
+	width: 20%;
+	min-height: auto;
+}
+
+/* messages */
+
+.message-box {
+	margin: 20px;
+	font-size: 18px;
+}
+
+
+.section-loader {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 9999999;
+	background-color: rgba(128, 128, 128, 0.35);
+	display: none;
+}
+
+
+/* new */
+ 
+table {
+    margin-bottom: 0;
+}
+
+
+
+.section-guest2 {
+	display: none;
+}
+
+.fc-past {
+	background-color: #F4F8F9;
+	cursor: auto;
+}
+
+#section-times-period-1, #section-times-period-2, #section-times-period-3, #section-times-period-4 {
+	clear: both;
+}
+
+.selector-times-period-1, .selector-times-period-2, .selector-times-period-3, .selector-times-period-4 {
+	hyphens: manual;
+}
+
+.booking-welcome-message {
+	font-size: 29px; 
+	font-style: italic; 
+	font-weight: bold; 
+	margin-bottom: 15px; 
+	font-family: 'Justus-Roman',sans-serif !important;
+} 
+
+@media (max-width: 778px) {
+
+	.booking-welcome-message {
+		font-size: 20px; 
+		margin-bottom: 0;
+		letter-spacing: -0.5px;
+	}
+
+	.section-time-half {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	.section-main-page {
+		margin: 0 !important;
+		padding: 6px !important;
+	}	
+
+	.selection-box-time-holder {
+	    padding: 2px;
+	}
+
+	.selection-box-time-period {
+	    min-height: 60px;
+	}
+
+	.selection-box-time, .selection-box-time-period {
+	    padding: 5px 0 !important;
+	}
+
+	#button-continue-confirm {
+		width: 100% !important;
+    	padding: 15px;
+	}
+
+	.etheme_add_to_cart_button {
+		width: 100% !important;
+    	padding: 15px;
+	}
+
+	.selection-box-time {
+	    min-height: 74px !important;
+	}	
+
+
+	.section-half {
+		margin: 0 !important;
+		padding: 0 !important;
+		width: 100% !important;
+	}
+
+	.order-line {
+	    width: 100%;
+	}
+
+
+	.header .container .table-row .button-solid-blue {
+	    margin: 20px auto 0 auto !important;
+	    max-width: 200px;
+	    float: left !important;
+	    clear: both;
+	    position: relative;
+	    left: 50%;
+	    -webkit-transform: translateX(-50%);
+	    -moz-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	    -o-transform: translateX(-50%);
+	    transform: translateX(-50%);
+	}
+
+}
+
+@media (max-width: 979px) {
+	.mobile-loader {
+	    width: 0 !important;
+	    left: -2000px !important;
+	}
+
+}

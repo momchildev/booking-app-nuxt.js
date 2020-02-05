@@ -1,0 +1,94 @@
+
+/* calendar */
+div#calendar {
+    margin-top: 50px;
+}
+
+.fc {
+    font-family: "Lato", helvetica !important;
+}
+
+
+.fc td:hover {
+	/*background-color: #ECE8E8;*/	
+}
+
+.fc-scroller {
+    height: auto !important;
+    overflow: hidden !important;
+}
+
+.fc th, .fc td {
+    text-align: center !important;
+    vertical-align: middle;
+    > span {
+        float: none !important;
+        min-height: 70px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        
+        font-size: 20px !important;
+
+        @media (max-width: 778px) {
+             font-size: 12px !important;
+            min-height: 30px !important;
+        }
+    }
+
+
+
+    &.fc-past, &.fc-other-month {
+        background: #e8e8e7 !important;
+    }
+}
+
+.fc-basic-view .fc-body .fc-row {
+    @media (max-width: 778px) {
+        min-height: auto !important;
+    } 
+}
+
+
+.fc .fc-toolbar {
+    border: solid 1px #d8d8d8 !important;
+    border-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 20px !important;
+
+    > .fc-center {
+        > h2 {
+            font-weight: bold !important;
+            font-size: 22px !important;
+            padding: 10px 0 6px 0 !important;
+            text-transform: uppercase !important; 
+            font-family: "Lato", helvetica !important;
+             color: #626262 !important;
+
+            @media (max-width: 778px) {
+                font-size: 16px !important;
+            }
+        }
+    }
+
+    .fc-button {
+        text-shadow: none;
+        box-shadow: none; 
+        background-image: none;
+        background-color: transparent;
+        border: none;
+        margin-top: 5px !important;
+         color: #626262 !important;
+    }
+}
+
+
+
+
+.fc th.fc-widget-header {
+    border: none !important;
+    padding: 10px !important;
+
+    text-transform: uppercase !important;
+    color: #626262 !important;
+}
