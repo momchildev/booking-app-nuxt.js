@@ -32,7 +32,7 @@
     "lodash": "^4.17.2",
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.25",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^3.1.1",
     "nuxt": "^2.6.2",
     "vee-validate": "^2.1.5",
     "vue-full-calendar": "^2.7.0",
